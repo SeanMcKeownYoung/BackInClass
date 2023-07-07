@@ -225,6 +225,7 @@ body {
     font-smooth: always;
     font-style: normal;
 	font-weight: 400;
+    overflow: hidden;
 } 
 .backHeader {
     margin: 0%;
