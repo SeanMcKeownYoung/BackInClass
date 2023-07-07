@@ -235,19 +235,55 @@ body {
 }
 @media only screen and (max-width: 600px) {
 .backHeader {
-    padding: 50px 50px 120px 45px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 0px;
+    width: 100vw;
+    height: 100%;
+    }
+    }
+@media only screen and (max-width: 400px) {
+.backHeader {
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
     width: 100vw;
     height: 100%;
     }
     }
 
-/* CONSISTENT TEXT STYLES FOR EMAIL CAMPAIGNS */     
-@media only screen and (max-width: 600px) {
-    .branding {
-        transform: scale(0.72);
-        transform-origin: 0% 0%;
-    }
+/* CONSISTENT TEXT STYLES FOR EMAIL CAMPAIGNS */  
+.flex-container {
+    display: flex;
+    padding-right: 30%;
+  }
+  
+  .flex-container > div {
+    margin: 0px;
+    padding-right: 10px;
+  }
+  .siteLogo {
+    float: left;
+  }
+
+  .Online {
+    float: left;
+    opacity: 0;
+    animation: introDigital 2s ease 2s 1 normal forwards;
+  }
+
+
+@keyframes introDigital {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
+
+
 #start {
     position: absolute;
     width: 20px;
@@ -261,7 +297,7 @@ body {
 
 	100% {
 		opacity: 1;
-		transform:  translate(350px, -20px); rotate(0deg);
+		transform:  translate(310px, -20px) rotate(0deg);
 	}
 }
 @keyframes blinkArrow {
@@ -284,7 +320,7 @@ body {
 
 	100% {
 		opacity: 1;
-		transform:  translate(350px, -20px); rotate(0deg);
+		transform:  translate(310px, -20px) rotate(0deg);
 	}
 }
 
@@ -292,7 +328,7 @@ body {
     #start {
         position: absolute;
         width: 15px;
-        animation: startArrowM 1s ease 0s 1 normal forwards, blinkArrowM 1s ease 1.5s 1 normal forwards, outArrow 1s ease 3.5s 1 reverse forwards;
+        animation: startArrowM 1s ease 0s 1 normal forwards, blinkArrowM 1s ease 1.5s 1 normal forwards, outArrowM 1s ease 3.5s 1 reverse forwards;
     }
 }
 @keyframes startArrowM {
@@ -303,7 +339,7 @@ body {
 
 	100% {
 		opacity: 1;
-		transform:  translate(250px, -20px); rotate(0deg);
+		transform:  translate(250px, -20px) rotate(0deg);
 	}
 }
 @keyframes blinkArrowM {
@@ -326,25 +362,52 @@ body {
 
 	100% {
 		opacity: 1;
-		transform:  translate(250px, -20px); rotate(0deg);
+		transform:  translate(250px, -20px) rotate(0deg);
 	}
 }
-#Digital {
-    height: 30px;
-    opacity: 0;
-    padding-left: 10px;
-    transform: translate(0px, -7px);
-    animation: introDigital 2s ease 2s 1 normal forwards;
+
+@media only screen and (max-width: 400px) {
+    #start {
+        position: absolute;
+        width: 15px;
+        animation: startArrowS 1s ease 0s 1 normal forwards, blinkArrowS 1s ease 1.5s 1 normal forwards, outArrowS 1s ease 3.5s 1 reverse forwards;
+    }
 }
-@keyframes introDigital {
+@keyframes startArrowS {
 	0% {
 		opacity: 0;
+		transform: translate(950px, -50px) rotate(-200deg);
 	}
 
 	100% {
 		opacity: 1;
+		transform:  translate(190px, -20px) rotate(0deg);
 	}
 }
+@keyframes blinkArrowS {
+	0%,
+	50%,
+	100% {
+		opacity: 1;
+	}
+
+	25%,
+	75% {
+		opacity: 0;
+	}
+}
+@keyframes outArrowS {
+	0% {
+		opacity: 0;
+		transform: translate(950px, -50px) rotate(-200deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform:  translate(190px, -20px) rotate(0deg);
+	}
+}
+
 h1 {
     font-family: "farnham headline", Times, serif;
 	font-style: normal;
@@ -361,8 +424,8 @@ h1 {
     margin-bottom: 25px;
 	font-style: normal;
 	font-weight: 800;
-    font-size: 17vw;
-    line-height: 60px;
+    font-size: calc(15px + 10vw);
+    line-height: calc(5px + 10vw);
     margin-right: 10vw;
 	}
     }
@@ -377,8 +440,8 @@ intro {
 
     @media only screen and (max-width: 600px) {
     intro {
-    font-size: 20px; 
-    line-height: 35px;
+    font-size: calc(17px + 0.390625vw);
+    line-height: calc(27px + 0.390625vw);
     width: 65vw;
     float: left;
     }
@@ -411,8 +474,8 @@ ul {
             width: 65vw;
             font-family: 'benton sans', sans-serif; 
             font-weight: 400; 
-            font-size: 18px; 
-            line-height: 24px;
+            font-size: calc(15px + 0.390625vw);
+            line-height: calc(25px + 0.390625vw);
             z-index: 5;
             }
         }
@@ -440,6 +503,7 @@ FOOTER {
     margin: 0;
     width: 100%;
     height: 100%;
+    padding-top: 50px;
 }
 @media only screen and (max-width: 600px) {
     FOOTER {
@@ -465,11 +529,10 @@ FOOTER {
     text-size-adjust: none; 
     font-weight: 400;
     color: var(--accent);
-    filter: brightness(55%);
+    filter: brightness(85%);
 }
 .rightText:hover {
     text-align: left;
-    padding-left: 30px;
     font-family:'benton sans', sans-serif; 
     font-size:14px; 
     line-height: 20px; 
@@ -478,12 +541,13 @@ FOOTER {
     color: var(--accent);
     transition: 0.3s;
     cursor: pointer;
+    filter: brightness(0%);
 }
 
 @media only screen and (max-width: 600px) {
     .rightText {
     padding-left: 0px;
-    padding-top: 0px;
+    padding-top: 40px;
     margin-top: 0;
     }
   }
@@ -498,8 +562,13 @@ FOOTER {
 }
 @media only screen and (max-width: 600px) {
     .logoText {
-        text-transform:none; 
+        text-transform: none; 
         text-transform: uppercase; 
+    }
+}
+@media only screen and (max-width: 400px) {
+    .logoText {
+        font-size:11px; 
     }
 }
 .logo {
@@ -527,15 +596,14 @@ underLine {
     margin-top: 10px;
 }
 
-
-
 button {
-    background-color: transparent;
+    background-color: var(--accent);
     border: 3px solid var(--accent);
-    color: white;
+    -webkit-text-fill-color: #000;
     text-decoration: none;
+    text-transform: uppercase;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 21px;
     padding: 20px 40px 20px 20px;
     z-index: 5;
     transition: 0.3s;
@@ -545,27 +613,32 @@ button {
 button:hover {
     background-color: var(--accent);
     border: 3px solid var(--accent);
-    color: white;
+    -webkit-text-fill-color: #000;
     text-decoration: none;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 21px;
     padding: 20px 40px 20px 20px;
     z-index: 5;
-    transition: 0.3s;
+    animation: buttonHover 2s ease 0s infinite normal forwards;
 }
-@media only screen and (max-width: 600px) {
-    button {
-        width: 130%;
-        background-color: transparent;
-        border: 3px solid var(--accent);
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 18px;
-        padding: 20px 40px 20px 20px;
-        z-index: 5;
-        transition: 0.3s;
-    }
+
+
+
+@keyframes buttonHover {
+	0%,
+	50%,
+	100% {
+        -webkit-box-shadow:0px 0px 45px 2px var(--accent);
+        -moz-box-shadow: 0px 0px 45px 2px var(--accent);
+        box-shadow: 0px 0px 45px 2px var(--accent);
+	}
+
+	25%,
+	75% {
+        -webkit-box-shadow:0px 0px 45px 12px var(--accent);
+        -moz-box-shadow: 0px 0px 45px 12px var(--accent);
+        box-shadow: 0px 0px 45px 12px var(--accent);
+	}
 }
 
 
@@ -607,11 +680,32 @@ button:hover {
 
 	100% {
 		opacity: 1;
-		transform: translateX(calc(85% - 285px)) scale(0.8) transform-origin: 0% 0%;
+		transform: translateX(calc(85% - 285px)) scale(0.8) transform-origin 0% 0%;
 	}
 }
 
+@media only screen and (max-width: 400px) {
+    .heroImage {
+        transform: scale(0.7);
+        transform-origin: 0% 0%;
+        padding-bottom: 10px;
+        height: 550px;
+        margin-left: 0;
+        animation: coverAnimM 3s cubic-bezier(0.68, -0.6, 0.32, 1.6) 0s 1 normal forwards;
+    }
+}
 
+@keyframes coverAnimM {
+	0% {
+		opacity: 0;
+		transform: scale(2);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(calc(85% - 285px)) scale(0.7) transform-origin 0% 0%;
+	}
+}
 
 
 accentColor {
@@ -625,14 +719,20 @@ footerSub {
     line-height: 30px;
     text-align: left;
     color: var(--accent);
-    filter: brightness(55%);
+    filter: brightness(85%);
 }
+
 accentDark {
     color: var(--accent);
-    filter: brightness(55%);
+    filter: brightness(85%);
+}
+accentDark:hover {
+    filter: brightness(0%);
 }
 .accentDark {
     color: var(--accent);
-    filter: brightness(55%);
+    filter: brightness(85%);
 }
-
+.accentDark:hover {
+    filter: brightness(0%);
+}
